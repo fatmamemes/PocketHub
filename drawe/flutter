@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_appsahrebuttun/Sayfalar/cat.dart';
+import 'package:flutter_appsahrebuttun/Sayfalar/home.dart';
+
+class  mydrawer extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          UserAccountsDrawerHeader(
+            accountEmail: Text("fatema.mams@gmail.com"),
+            accountName: Text("firat.edu.tr"),
+            currentAccountPicture: CircleAvatar(
+                child: Icon(Icons.person, color: Colors.black87,)
+            ),
+            decoration: BoxDecoration(
+
+              color: Colors.green,
+
+            ),
+          ),
+        Container( child: FlatButton(onPressed: ()=>Navigator.pop(context),child: Text('Close'),),
+
+        ),
+          ListTile(
+            title: Text("Ana Sayfa", style: TextStyle(color: Colors.black,
+                fontStyle: (FontStyle.italic),
+                fontSize: 20)),
+            leading: Icon(Icons.home),
+            onTap: () {
+
+              Navigator.of(context).pushNamed('home');
+            },
+          ),
+          ListTile(
+            title: Text("giriş", style: TextStyle(color: Colors.black,
+                fontStyle: (FontStyle.italic),
+                fontSize: 20)),
+            leading: Icon(Icons.add_to_home_screen,),
+            onTap: () {},),
+          ListTile(
+            title: Text(" ayarlar", style: TextStyle(color: Colors.black,
+                fontStyle: (FontStyle.italic),
+                fontSize: 20)),
+            leading: Icon(Icons.settings,),
+            onTap: () {
+              Navigator.of(context).pushNamed('cat');
+            },),
+          ListTile(
+            title: Text("çıkış yap", style: TextStyle(color: Colors.black,
+                fontStyle: (FontStyle.italic),
+                fontSize: 20)),
+            leading: Icon(Icons.exit_to_app),
+            onTap: () {},
+          )
+
+        ],
+
+
+      ),
+
+    );
+
+  }
+
+}
